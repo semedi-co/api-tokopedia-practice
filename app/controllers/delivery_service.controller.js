@@ -63,18 +63,16 @@ module.exports = class StorefrontController {
       const delivery_service = await db("delivery_service")
         .select("id", "name", "created_at", "updated_at")
         .where({ id })
-        
+        .first() // menjadikan object
+
+      if (delivery_service == undefined) {
+        throw new Api404Error("data not found");
+      }
+
       return res.json({
         success: true,
         message: "data delivery service successfully retrieved",
-        delivery_service: delivery_service.map((d) => {
-          return {
-            id: d.id,
-            name: d.name,
-            created_at: d.created_at,
-            updated_at: d.updated_at
-          }
-        })[0]
+        delivery_service
       });
     } catch (error) {
       next(error);
