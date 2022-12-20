@@ -20,6 +20,12 @@ module.exports = class usercontroller{
     }
     
     const {name,email,password}= value;
+    // check email
+    const mail = await db("users").where({}).first();
+
+    if (mail == email) {
+      
+    }
  
     await db("users").insert({
       id: crypto.randomUUID(),

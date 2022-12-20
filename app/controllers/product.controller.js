@@ -1,7 +1,6 @@
 const db = require("../../databases");
 const productschema = require("../validation/product.schema");
 const crypto = require("crypto");
-const bcrypt = require("bcrypt");
 const multer = require("multer");
 const fs = require("fs");
 const patch = require("path");
