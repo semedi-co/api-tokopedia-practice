@@ -130,6 +130,12 @@ module.exports = class ProductController {
           "pi.updated_at AS updated_pi"
         )
         .where({ "p.id": id });
+
+        // return console.log(products[0]);
+          if (products[0] == undefined) {
+            throw new Api404Error("data not found")
+          }
+
       return res.json({
         success: true,
         message: "data products successfully retrieved",

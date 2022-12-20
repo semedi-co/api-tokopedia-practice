@@ -112,7 +112,8 @@ module.exports = class UsersController {
           "s.avatar AS sa",
           "s.address AS sd"
         )
-        .where({ "u.id": id });
+        .where({ "u.id": id })
+
       return res.json({
         success: true,
         message: "data stores successfully retrieved",

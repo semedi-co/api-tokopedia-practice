@@ -72,7 +72,13 @@ module.exports = class StorefrontController {
           "p.stock",
           "p.description"
         )
-        .where({ "s.id": id });
+        .where({ "s.id": id })
+        .first()
+
+      if (storefront == undefined) {
+        throw new Api404Error("data not found");
+      }
+
       return res.json({
         success: true,
         message: "data storefront successfully retrieved",
