@@ -172,33 +172,45 @@ RESPONSE
 
 - Process Order (Seller)
 ```json
-POST /v1/order/:order_id
+POST /v1/order/:order_id/process
 
 RESPONSE
 {
   "success": true,
-  "message": "product successfully ordered"
+  "message": "order successfully proccessed"
+}
+```
+
+
+- Accepted Order (Seller)
+```json
+POST /v1/order/:order_id/accept
+
+RESPONSE
+{
+  "success": true,
+  "message": "order successfully accepted"
 }
 ```
 
 - Cancelled Order (Seller)
 ```json
-POST /v1/order/:order_id
+POST /v1/order/:order_id/cancel
 
 RESPONSE
 {
   "success": true,
-  "message": "product successfully ordered"
+  "message": "product successfully cancelled"
 }
 ```
 
 - Cancelled Order (Buyer)
 ```json
-POST /v1/order/:order_id
+POST /v1/order/:order_id/cancel
 
 RESPONSE
 {
   "success": true,
-  "message": "product successfully ordered"
+  "message": "product successfully cancelled"
 }
 ```
