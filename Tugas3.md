@@ -123,24 +123,6 @@ RESPONSE
 ```
 
 ## Orders
-- Add Order
-```json
-POST /v1/order
-
-REQUEST (Body)
-{
-  "delivery_service_id": 1,
-  "cart_id": [
-    "dc68a3f7-34e3-49f3-bd81-28d5afc5a989", "dc68a3f7-34e3-49f3-bd81-28d5afc5a989"
-  ]
-}
-
-RESPONSE
-{
-  "success": true,
-  "message": "product successfully ordered"
-}
-```
 
 - Get All Orders
 ```json
